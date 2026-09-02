@@ -1,10 +1,9 @@
 :root {
-  --bg-gradient: radial-gradient(at 0% 0%, #f472b6 0px, transparent 50%),
-                 radial-gradient(at 100% 0%, #fb7185 0px, transparent 50%),
-                 radial-gradient(at 100% 100%, #f43f5e 0px, transparent 50%),
-                 radial-gradient(at 0% 100%, #fda4af 0px, transparent 50%),
-                 radial-gradient(at 50% 50%, #fbcfe8 0px, transparent 60%),
-                 #fdf2f8;
+  --bg-gradient: radial-gradient(at 0% 0%, #d8b4fe 0px, transparent 50%),
+                 radial-gradient(at 100% 0%, #93c5fd 0px, transparent 50%),
+                 radial-gradient(at 100% 100%, #fbcfe8 0px, transparent 50%),
+                 radial-gradient(at 0% 100%, #fed7aa 0px, transparent 50%),
+                 #f1f5f9;
   --glass-bg: rgba(255, 255, 255, 0.45);
   --glass-border: rgba(255, 255, 255, 0.65);
   --glass-specular: inset 0 1px 1px 0 rgba(255, 255, 255, 0.8), inset 0 -1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -13,14 +12,15 @@
   --glass-display: rgba(255, 255, 255, 0.65);
   --glass-display-border: rgba(255, 255, 255, 0.8);
   
-  --btn-num-bg: rgba(255, 255, 255, 0.6);
-  --btn-num-hover: rgba(255, 255, 255, 0.85);
-  --btn-func-bg: rgba(241, 245, 249, 0.65);
-  --btn-func-hover: rgba(241, 245, 249, 0.9);
+  --btn-num-bg: rgba(255, 255, 255, 0.65);
+  --btn-num-hover: rgba(255, 235, 238, 0.85);
+  --btn-func-bg: rgba(255, 241, 242, 0.7);
+  --btn-func-hover: rgba(255, 228, 230, 0.9);
   
-  --apple-orange: #ff9f0a;
-  --apple-orange-gradient: linear-gradient(135deg, #ffb340, #ff8c00);
-  --apple-orange-shadow: 0 4px 14px rgba(255, 159, 10, 0.35);
+  --apple-red: #ff3b30;
+  --apple-red-gradient: linear-gradient(135deg, #ff453a, #d70015);
+  --apple-red-shadow: 0 4px 16px rgba(255, 59, 48, 0.38);
+  --apple-ruby-gradient: linear-gradient(135deg, #ff2d55, #ba0c2f);
   
   --apple-blue: #0071e3;
   --apple-purple: #af52de;
@@ -78,14 +78,14 @@ body {
   position: absolute;
   border-radius: 50%;
   filter: blur(80px);
-  opacity: 0.6;
+  opacity: 0.55;
   animation: float-orb 18s ease-in-out infinite alternate;
 }
 
 .orb-1 {
   width: 420px;
   height: 420px;
-  background: #f472b6;
+  background: #fca5a5;
   top: -80px;
   left: -80px;
 }
@@ -93,7 +93,7 @@ body {
 .orb-2 {
   width: 380px;
   height: 380px;
-  background: #fb7185;
+  background: #fda4af;
   bottom: -60px;
   right: -60px;
   animation-duration: 22s;
@@ -103,7 +103,7 @@ body {
 .orb-3 {
   width: 320px;
   height: 320px;
-  background: #fda4af;
+  background: #fecdd3;
   top: 40%;
   right: 15%;
   animation-duration: 16s;
@@ -144,7 +144,7 @@ body {
 .brand-icon {
   width: 38px;
   height: 38px;
-  background: linear-gradient(135deg, #ffffff, rgba(255, 255, 255, 0.7));
+  background: linear-gradient(135deg, #ff453a, #d70015);
   border: 1px solid rgba(255, 255, 255, 0.9);
   border-radius: 12px;
   display: flex;
@@ -152,8 +152,8 @@ body {
   justify-content: center;
   font-weight: 700;
   font-size: 20px;
-  color: #ff9f0a;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06), inset 0 1px 1px #fff;
+  color: #ffffff;
+  box-shadow: 0 8px 16px rgba(255, 59, 48, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
 }
 
@@ -166,8 +166,8 @@ body {
 
 .brand-sub {
   font-size: 0.75rem;
-  color: var(--text-secondary);
-  font-weight: 500;
+  color: var(--apple-red);
+  font-weight: 600;
   letter-spacing: -0.01em;
 }
 
@@ -204,7 +204,7 @@ body {
 }
 
 .icon-btn.active {
-  color: var(--apple-blue);
+  color: var(--apple-red);
   background: rgba(255, 255, 255, 0.9);
 }
 
@@ -248,8 +248,8 @@ body {
 
 .mode-tab.active {
   background: rgba(255, 255, 255, 0.95);
-  color: var(--text-primary);
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+  color: var(--apple-red);
+  box-shadow: 0 3px 10px rgba(255, 59, 48, 0.12), 0 1px 2px rgba(0, 0, 0, 0.04);
 }
 
 /* Main Calculator Glass Canvas */
@@ -274,7 +274,7 @@ body {
   position: absolute;
   inset: -2px;
   border-radius: calc(var(--radius-app) + 2px);
-  background: linear-gradient(135deg, #ff2d55, #ff9f0a, #af52de, #0071e3, #34c759);
+  background: linear-gradient(135deg, #ff2d55, #ff3b30, #af52de, #ff8c00, #ff453a);
   z-index: -1;
   opacity: 0;
   transition: opacity 0.4s ease;
@@ -313,9 +313,9 @@ body {
   left: 14px;
   font-size: 0.68rem;
   font-weight: 600;
-  color: var(--apple-pink);
-  background: rgba(255, 45, 85, 0.08);
-  border: 1px solid rgba(255, 45, 85, 0.15);
+  color: var(--apple-red);
+  background: rgba(255, 59, 48, 0.08);
+  border: 1px solid rgba(255, 59, 48, 0.2);
   padding: 3px 8px;
   border-radius: var(--radius-pill);
   display: flex;
@@ -327,8 +327,8 @@ body {
   width: 5px;
   height: 5px;
   border-radius: 50%;
-  background: var(--apple-pink);
-  box-shadow: 0 0 6px var(--apple-pink);
+  background: var(--apple-red);
+  box-shadow: 0 0 6px var(--apple-red);
   animation: pulse-dot 1.8s infinite ease-in-out;
 }
 
@@ -420,8 +420,9 @@ body {
 
 .calc-btn:hover {
   background: var(--btn-num-hover);
+  border-color: rgba(255, 59, 48, 0.25);
   transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06), var(--glass-specular);
+  box-shadow: 0 8px 18px rgba(255, 59, 48, 0.08), var(--glass-specular);
 }
 
 .calc-btn:active, .calc-btn.btn-pressed {
@@ -433,56 +434,58 @@ body {
 /* Top Function Buttons */
 .btn-func {
   background: var(--btn-func-bg);
-  color: #475569;
+  color: #991b1b;
   font-weight: 600;
   font-size: 1.05rem;
 }
 
 .btn-danger {
-  color: var(--apple-pink);
-  background: rgba(255, 45, 85, 0.08);
-  border-color: rgba(255, 45, 85, 0.2);
+  color: #ffffff;
+  background: linear-gradient(135deg, #ef4444, #b91c1c);
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 14px rgba(239, 68, 68, 0.35);
 }
 
 .btn-danger:hover {
-  background: rgba(255, 45, 85, 0.15);
+  background: linear-gradient(135deg, #f87171, #dc2626);
+  box-shadow: 0 6px 18px rgba(239, 68, 68, 0.45);
 }
 
-/* Apple Orange Operator Buttons */
+/* Apple Red Operator Buttons */
 .btn-op {
-  background: var(--apple-orange-gradient);
+  background: var(--apple-red-gradient);
   color: #ffffff;
   border: 1px solid rgba(255, 255, 255, 0.6);
   font-size: 1.5rem;
   font-weight: 600;
-  box-shadow: var(--apple-orange-shadow), var(--glass-specular);
+  box-shadow: var(--apple-red-shadow), var(--glass-specular);
 }
 
 .btn-op:hover {
   filter: brightness(1.08);
-  background: var(--apple-orange-gradient);
-  box-shadow: 0 6px 18px rgba(255, 159, 10, 0.5), var(--glass-specular);
+  background: var(--apple-red-gradient);
+  box-shadow: 0 6px 20px rgba(255, 59, 48, 0.55), var(--glass-specular);
 }
 
 .btn-op.active {
   background: #ffffff;
-  color: #ff9f0a;
+  color: var(--apple-red);
 }
 
 /* Equals Button */
 .btn-equals {
   grid-column: span 2;
-  background: linear-gradient(135deg, #0071e3, #43a047);
+  background: var(--apple-ruby-gradient);
   color: #ffffff;
   font-weight: 600;
   font-size: 1.5rem;
   border: 1px solid rgba(255, 255, 255, 0.7);
-  box-shadow: 0 4px 16px rgba(0, 113, 227, 0.3), var(--glass-specular);
+  box-shadow: 0 4px 18px rgba(255, 45, 85, 0.4), var(--glass-specular);
 }
 
 .btn-equals:hover {
-  background: linear-gradient(135deg, #0077ed, #4caf50);
-  box-shadow: 0 6px 20px rgba(0, 113, 227, 0.45);
+  background: linear-gradient(135deg, #ff4069, #d60037);
+  box-shadow: 0 6px 22px rgba(255, 45, 85, 0.55);
 }
 
 /* Special Action Buttons */
