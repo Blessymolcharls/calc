@@ -1,9 +1,10 @@
 :root {
-  --bg-gradient: radial-gradient(at 0% 0%, #d8b4fe 0px, transparent 50%),
-                 radial-gradient(at 100% 0%, #93c5fd 0px, transparent 50%),
-                 radial-gradient(at 100% 100%, #fbcfe8 0px, transparent 50%),
-                 radial-gradient(at 0% 100%, #fed7aa 0px, transparent 50%),
-                 #f1f5f9;
+  --bg-gradient: radial-gradient(at 0% 0%, #f472b6 0px, transparent 50%),
+                 radial-gradient(at 100% 0%, #fb7185 0px, transparent 50%),
+                 radial-gradient(at 100% 100%, #f43f5e 0px, transparent 50%),
+                 radial-gradient(at 0% 100%, #fda4af 0px, transparent 50%),
+                 radial-gradient(at 50% 50%, #fbcfe8 0px, transparent 60%),
+                 #fdf2f8;
   --glass-bg: rgba(255, 255, 255, 0.45);
   --glass-border: rgba(255, 255, 255, 0.65);
   --glass-specular: inset 0 1px 1px 0 rgba(255, 255, 255, 0.8), inset 0 -1px 2px 0 rgba(0, 0, 0, 0.05);
@@ -77,14 +78,14 @@ body {
   position: absolute;
   border-radius: 50%;
   filter: blur(80px);
-  opacity: 0.55;
+  opacity: 0.6;
   animation: float-orb 18s ease-in-out infinite alternate;
 }
 
 .orb-1 {
   width: 420px;
   height: 420px;
-  background: #c084fc;
+  background: #f472b6;
   top: -80px;
   left: -80px;
 }
@@ -92,7 +93,7 @@ body {
 .orb-2 {
   width: 380px;
   height: 380px;
-  background: #67e8f9;
+  background: #fb7185;
   bottom: -60px;
   right: -60px;
   animation-duration: 22s;
@@ -102,7 +103,7 @@ body {
 .orb-3 {
   width: 320px;
   height: 320px;
-  background: #fca5a5;
+  background: #fda4af;
   top: 40%;
   right: 15%;
   animation-duration: 16s;
