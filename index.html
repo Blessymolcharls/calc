@@ -3,35 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WrongCalc 3000 | The Confidently Incorrect Calculator</title>
-  <meta name="description" content="A state-of-the-art useless calculator engineered to perform the wrong operation and justify it with absurd pseudo-math.">
+  <title>WrongCalc Pro | The Apple of Inaccuracy</title>
+  <meta name="description" content="A state-of-the-art useless calculator engineered with liquid glassmorphism, pastel gradients, and mathematical chaos.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="ambient-mesh"></div>
+  <!-- Ambient Pastel Animated Orbs -->
+  <div class="ambient-mesh">
+    <div class="ambient-orb orb-1"></div>
+    <div class="ambient-orb orb-2"></div>
+    <div class="ambient-orb orb-3"></div>
+  </div>
 
   <main class="app-wrapper">
     <!-- Header -->
     <header class="app-header">
       <div class="brand-badge">
-        <div class="brand-icon">≠</div>
+        <div class="brand-icon"></div>
         <div>
-          <h1 class="brand-title">WrongCalc 3000</h1>
-          <div class="brand-sub">Certified 100% Inaccurate</div>
+          <h1 class="brand-title">WrongCalc Pro</h1>
+          <div class="brand-sub">Designed in California • Utterly Inaccurate</div>
         </div>
       </div>
       <div class="header-controls">
-        <button id="soundToggle" class="icon-btn active" title="Toggle Sound FX" aria-label="Toggle Sound">
-          <svg id="soundIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <button id="soundToggle" class="icon-btn active" title="Haptic Sounds" aria-label="Toggle Sound">
+          <svg id="soundIcon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
             <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
           </svg>
         </button>
-        <button id="helpBtn" class="icon-btn" title="About / Manual" aria-label="Help & Info">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <button id="helpBtn" class="icon-btn" title="About" aria-label="Help">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"></circle>
             <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path>
             <line x1="12" y1="17" x2="12.01" y2="17"></line>
@@ -40,18 +45,18 @@
       </div>
     </header>
 
-    <!-- Wrongness Mode Selector -->
+    <!-- iOS Segmented Mode Selector -->
     <nav class="mode-selector" aria-label="Wrongness Mode">
-      <button class="mode-tab active" data-mode="chaotic" id="modeChaotic">💥 Chaotic Evil</button>
-      <button class="mode-tab" data-mode="gaslight" id="modeGaslight">🤷 Gaslight</button>
-      <button class="mode-tab" data-mode="strings" id="modeStrings">🔤 String Math</button>
-      <button class="mode-tab" data-mode="overthink" id="modeOverthink">🌌 Overthinker</button>
-      <button class="mode-tab" data-mode="off_by_one" id="modeOffByOne">🤏 Off-By-One</button>
+      <button class="mode-tab active" data-mode="chaotic" id="modeChaotic">Chaotic Evil</button>
+      <button class="mode-tab" data-mode="gaslight" id="modeGaslight">Gaslight</button>
+      <button class="mode-tab" data-mode="strings" id="modeStrings">String Math</button>
+      <button class="mode-tab" data-mode="overthink" id="modeOverthink">Overthink</button>
+      <button class="mode-tab" data-mode="off_by_one" id="modeOffByOne">Off-By-One</button>
     </nav>
 
-    <!-- Main Calculator Shell -->
+    <!-- Glass Calculator Body -->
     <section class="calculator-card" id="calcCard">
-      <!-- OLED Display -->
+      <!-- Screen Display -->
       <div class="display-container" id="displayArea">
         <div class="confidence-meter">
           <span class="confidence-dot"></span>
@@ -61,18 +66,18 @@
         <div class="main-readout" id="mainDisplay">0</div>
       </div>
 
-      <!-- Math-splainer Box -->
+      <!-- Math-splainer Floating Glass Pill -->
       <div class="mathsplain-box" id="mathsplainBox">
-        <span class="mathsplain-icon" id="mathsplainIcon">🧠</span>
-        <span class="mathsplain-text" id="mathsplainText">Ready to calculate something fundamentally incorrect.</span>
+        <span class="mathsplain-icon" id="mathsplainIcon">✨</span>
+        <span class="mathsplain-text" id="mathsplainText">Engineered to produce mathematically unprecedented blunders.</span>
       </div>
 
       <!-- Keypad -->
       <div class="keypad-grid" id="keypad">
         <!-- Row 1 -->
-        <button class="calc-btn btn-danger" data-action="clear" id="btn-clear">AC</button>
-        <button class="calc-btn btn-func" data-action="delete" id="btn-delete">DEL</button>
-        <button class="calc-btn btn-special" data-action="approx" id="btn-approx">≈</button>
+        <button class="calc-btn btn-danger btn-func" data-action="clear" id="btn-clear">AC</button>
+        <button class="calc-btn btn-func" data-action="delete" id="btn-delete">⌫</button>
+        <button class="calc-btn btn-special btn-func" data-action="approx" id="btn-approx">≈</button>
         <button class="calc-btn btn-op" data-action="op" data-op="÷" id="btn-div">÷</button>
 
         <!-- Row 2 -->
@@ -85,7 +90,7 @@
         <button class="calc-btn" data-action="num" data-num="4" id="btn-4">4</button>
         <button class="calc-btn" data-action="num" data-num="5" id="btn-5">5</button>
         <button class="calc-btn" data-action="num" data-num="6" id="btn-6">6</button>
-        <button class="calc-btn btn-op" data-action="op" data-op="-" id="btn-sub">-</button>
+        <button class="calc-btn btn-op" data-action="op" data-op="-" id="btn-sub">−</button>
 
         <!-- Row 4 -->
         <button class="calc-btn" data-action="num" data-num="1" id="btn-1">1</button>
@@ -99,13 +104,13 @@
         <button class="calc-btn" data-action="num" data-num="." id="btn-dot">.</button>
         <button class="calc-btn btn-special" data-action="panic" id="btn-panic" title="Panic!">🔥</button>
 
-        <!-- Row 6 (Equals) -->
+        <!-- Row 6 (Equals & Shuffle) -->
         <button class="calc-btn btn-equals" data-action="equals" id="btn-equals">=</button>
         <button class="calc-btn btn-func" data-action="scramble" id="btn-scramble" title="Scramble Buttons" style="grid-column: span 2;">🎲 Shuffle</button>
       </div>
     </section>
 
-    <!-- History Log Drawer -->
+    <!-- History Drawer -->
     <section class="history-drawer">
       <div class="history-header">
         <span>Dubious Calculation Ledger</span>
@@ -121,9 +126,9 @@
 
     <!-- Footer -->
     <footer class="app-footer">
-      <span>Built with senior-level malice &amp; faulty ALUs</span>
+      <span>WrongCalc Pro</span>
       <span>•</span>
-      <span>ISO-404 Compliant</span>
+      <span>Liquid Glass Edition</span>
     </footer>
   </main>
 

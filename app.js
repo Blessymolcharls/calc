@@ -1,5 +1,5 @@
 /**
- * App.js - Application controller for WrongCalc 3000
+ * App.js - Application controller for WrongCalc Pro (Liquid Glass Edition)
  */
 
 import { WrongMathEngine, MODES } from './mathEngine.js';
@@ -47,7 +47,7 @@ class WrongCalculatorApp {
         const mode = e.currentTarget.dataset.mode;
         this.engine.setMode(mode);
         sounds.playOperatorClick();
-        this.setMathsplain(`Switched mode to [${e.currentTarget.innerText}]. Accuracy guarantee remains strictly 0%.`, '⚙️');
+        this.setMathsplain(`Switched mode to [${e.currentTarget.innerText}]. Accuracy guarantee: strictly 0%.`, '✨');
       });
     });
 
@@ -63,7 +63,7 @@ class WrongCalculatorApp {
     if (helpBtn) {
       helpBtn.addEventListener('click', () => {
         sounds.playKeyClick(0.9);
-        this.setMathsplain("Help Manual: Every button is intentionally deceitful. Enjoy the chaos.", "📖");
+        this.setMathsplain("Help: Built to deliver mathematically unprecedented blunders. Enjoy!", "📖");
       });
     }
 
@@ -88,7 +88,7 @@ class WrongCalculatorApp {
         this.inputDecimal();
         sounds.playKeyClick(1.4);
       } else if (['+', '-', '*', '/'].includes(e.key)) {
-        const opMap = { '+': '+', '-': '-', '*': '×', '/': '÷' };
+        const opMap = { '+': '+', '-': '−', '*': '×', '/': '÷' };
         this.chooseOperator(opMap[e.key]);
         sounds.playOperatorClick();
       } else if (e.key === 'Enter' || e.key === '=') {
@@ -193,6 +193,10 @@ class WrongCalculatorApp {
     const operandB = this.currentInput || '0';
     const activeOp = this.operator;
 
+    // Trigger Apple Intelligence shimmer effect
+    this.calcCard.classList.add('calculating-shimmer');
+    setTimeout(() => this.calcCard.classList.remove('calculating-shimmer'), 1200);
+
     // Run computation through the WrongMathEngine
     const result = this.engine.calculate(operandA, activeOp, operandB);
 
@@ -228,7 +232,7 @@ class WrongCalculatorApp {
   startOverthinking() {
     this.isThinking = true;
     sounds.playFanfare();
-    this.calcCard.classList.add('anim-overthink');
+    this.calcCard.classList.add('anim-overthink', 'calculating-shimmer');
 
     const steps = [
       "Consulting 4-dimensional string theory...",
@@ -247,7 +251,7 @@ class WrongCalculatorApp {
 
     setTimeout(() => {
       clearInterval(interval);
-      this.calcCard.classList.remove('anim-overthink');
+      this.calcCard.classList.remove('anim-overthink', 'calculating-shimmer');
       this.isThinking = false;
       const overthinkAnswers = ["42.0000000000001", "42 (Obviously)", "NaN ± 7", "41.9999999999999"];
       this.currentInput = overthinkAnswers[Math.floor(Math.random() * overthinkAnswers.length)];
@@ -261,7 +265,7 @@ class WrongCalculatorApp {
   triggerPanic() {
     sounds.playPanicSiren();
     this.calcCard.classList.add('anim-panic');
-    this.setMathsplain("CRITICAL CALCULATION PANIC: Numbers are escaping the memory registers!", "🚨");
+    this.setMathsplain("CRITICAL CALCULATION PANIC: Numbers are escaping memory registers!", "🚨");
     
     setTimeout(() => {
       this.calcCard.classList.remove('anim-panic');
@@ -351,7 +355,6 @@ class WrongCalculatorApp {
   updateDisplay() {
     if (this.isThinking) return;
 
-    // Truncate display string if overflowing
     let displayStr = this.currentInput || '0';
     if (displayStr.length > 16) {
       displayStr = displayStr.slice(0, 15) + '…';
